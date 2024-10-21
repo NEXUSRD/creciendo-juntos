@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creciendo Juntos - Login</title>
+    <style>
+        :root {
+            --primary: #FF69B4;
+            --secondary: #87CEEB;
+            --text: #333;
+            --error: #ff4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: url('bebe.gif') center/cover fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: min(90%, 800px); /* Ajuste del ancho para más espacio */
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h1, h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            background: var(--secondary);
+            border-radius: 50%;
+            padding: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff45a0;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            color: var(--error);
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos para los artículos y videos */
+        .article-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .article-section:hover {
+            transform: translateX(10px);
+        }
+
+        .article-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .article-section p {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .article-section video {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        #logout-btn {
+            background: var(--secondary);
+            margin-top: 1rem;
+        }
+
+        #logout-btn:hover {
+            background: #5fb3d9;
+        }
+
+        .logo-img {
+    width: 150px; /* Cambia el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+    margin: 0 auto 20px; /* Centra la imagen y agrega un margen inferior */
+}
+s
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sección de Login -->
+        <div id="login-section" class="login-section">
+            <h1>Creciendo Juntos</h1>
+            <div class="logo">
+                <img src="Logo.png" alt="Logo de la Guardería" class="logo-img" />
+            </div>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Usuario" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+                <div id="error-message" class="error-message"></div>
+            </form>
+        </div>
+
+        <!-- Sección del Dashboard con paneles de información y videos -->
+        <div id="dashboard-section" class="dashboard-section hidden">
+            <h2>¡Bienvenido a Creciendo Juntos!</h2>
+
+            <div class="article-section">
+                <h3>Cuidado Infantil Personalizado</h3>
+                <p>En nuestra guardería, ofrecemos atención personalizada a cada niño, asegurándonos de que sus necesidades individuales sean atendidas.</p>
+                <video controls>
+                    <source src="video-cuidado.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+
+            <div class="article-section">
+                <h3>Estimulación Temprana</h3>
+                <p>Nuestra metodología incluye actividades que fomentan el desarrollo cognitivo y emocional desde una edad temprana.</p>
+                <video controls>
+                    <source src="video-estimulacion.mp4" type="video/mp4">
+                    Tu navegador no soporta este formato de video.
+                </video>
+            </div>
+
+            <div class="article-section">
+                <h3>Próximas Actividades</h3>
+                <p>• Taller de música infantil<br>
+                   • Día de arte y pintura<br>
+                   • Juegos al aire libre</p>
+            </div>
+
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const errorMessage = document.getElementById('error-message');
+        const loginSection = document.getElementById('login-section');
+        const dashboardSection = document.getElementById('dashboard-section');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin1234') {
+                loginSection.classList.add('hidden');
+                dashboardSection.classList.remove('hidden');
+                errorMessage.textContent = '';
+            } else {
+                errorMessage.textContent = 'Usuario o contraseña incorrectos';
+                loginForm.reset();
+            }
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            dashboardSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+            loginForm.reset();
+        });
+    </script>
+</body>
+</html>
